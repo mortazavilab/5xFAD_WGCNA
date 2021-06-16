@@ -54,7 +54,7 @@ powers = c(c(1:10), seq(from = 12, to=20, by=2))
 sft = pickSoftThreshold(datExpr, powerVector = powers, verbose = 5)
 
 ## Set Power
-softPower = 20;
+softPower = 15;
 adjacency = adjacency(datExpr, power = softPower);
 
 # Turn adjacency into topological overlap
