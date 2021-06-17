@@ -4,7 +4,7 @@ options(stringsAsFactors = FALSE);
 ###---------------------- 
 # Read data
 print("Read Data")
-expressionList = read.csv('data/expressionList_3xTgAD_BL6_hipp_F', header = TRUE);
+expressionList = read.csv('expressionList_5xFAD', header = TRUE);
 
 ## Prepare and clean data
 #Remove rows with less than 1 TPM
@@ -42,7 +42,7 @@ nSamples = nrow(datExpr)
 
 collectGarbage();
 
-save(datExpr, file = "data/data_input.RData")
+save(datExpr, file = "data_input.RData")
 
 ###---------------------- 
 ## Modules construction
@@ -60,7 +60,7 @@ adjacency = adjacency(datExpr, power = softPower);
 # Turn adjacency into topological overlap
 TOM = TOMsimilarity(adjacency);
 dissTOM = 1-TOM
-save(TOM, file = "data/TOM.RData")
+save(TOM, file = "TOM.RData")
 
 # Call the hierarchical clustering function
 geneTree = hclust(as.dist(dissTOM), method = "average");
@@ -93,4 +93,4 @@ colorOrder = c("grey", standardColors(50));
 moduleLabels = match(moduleColors, colorOrder)-1;
 MEs = mergedMEs;
 # Save module colors and labels for use in subsequent parts
-save(MEs, moduleLabels, moduleColors, geneTree, dynamicColors, file = "data/Data-networkConstruction.RData")
+save(MEs, moduleLabels, moduleColors, geneTree, dynamicColors, file = "Data-networkConstruction.RData")
