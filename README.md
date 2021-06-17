@@ -7,3 +7,18 @@ Mouse models of human diseases are invaluable tools for studying pathogenic mech
 ### WGCNA analysis 
 
 A gene expresion matrix filtered by genes with more than 1 TPM and without an outlier sample (both cortex and hippocampus from that sample were removed) was used to do a weighted gene correlation network analysis (WGCNA).
+
+
+### Installation
+
+For running [WGCNA_5xFAD.R](https://github.com/mortazavilab/5xFAD_WGCNA/blob/main/WGCNA_5xFAD.R), you need to have R>=3.5 on your machine.
+
+#### Instal WGCNA: an R package for weighted correlation network analysis
+
+The WGCNA package is now available from the Comprehensive R Archive Network (CRAN), the standard repository for R add-on packages. The easiest way to install this package is to run 
+```r
+install.packages("BiocManager")
+BiocManager::install("WGCNA")
+```
+
+For more information about this package please check [here](https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/).
